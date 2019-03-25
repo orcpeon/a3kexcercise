@@ -17,7 +17,7 @@ public class Votes {
     private String color;
 
     @Column(nullable = false)
-    private String votes;
+    private Integer votes;
 
     public Integer getId() {
         return id;
@@ -43,11 +43,11 @@ public class Votes {
         this.color = color;
     }
 
-    public String getVotes() {
+    public Integer getVotes() {
         return votes;
     }
 
-    public void setVotes(String votes) {
+    public void setVotes(Integer votes) {
         this.votes = votes;
     }
 }

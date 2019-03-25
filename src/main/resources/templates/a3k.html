@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>HELLO THERE</h1>
+<h1>colortables</h1>
 
 <table>
 
@@ -15,11 +15,28 @@
         <th>Votes</th>
     </tr>
     <tr th:each="col : ${colors}">
-        <td th:text="${col.color}"></td>
+        <td>
+            <a href = "a3k.html" th:text="${col.color}" th:href="@{/upd(revColor=${col.color})}"></a>
+        </td>
+        <td th:text="">
 
+        </td>
+    </tr>
+    <tr>
+        <td th:text="Total" th:onclick="'javascript:totalClicked();'">Total</td>
+        <!--<td><a th:href="">Total</a></td>-->
+        <!--<a href="product/list.html" th:href="@{/product/list}">Product List</a>-->
     </tr>
 
 </table>
+
+<script>
+    function totalClicked() {
+
+    }
+
+
+</script>
 
 </body>
 </html>
