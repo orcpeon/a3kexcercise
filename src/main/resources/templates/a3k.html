@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Color tables</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<h1>HELLO THERE</h1>
+
+<table>
+
+    <tr>
+        <th>Color</th>
+        <th>Votes</th>
+    </tr>
+    <tr th:each="col : ${colors}">
+        <td th:text="${col.color}"></td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>
