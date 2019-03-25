@@ -6,8 +6,6 @@
 </head>
 <body>
 
-<h1>colortables</h1>
-
 <table>
 
     <tr>
@@ -16,14 +14,16 @@
     </tr>
     <tr th:each="col : ${colors}">
         <td>
-            <a href = "a3k.html" th:text="${col.color}" th:href="@{/upd(revColor=${col.color})}"></a>
+            <a href="a3k.html" th:text="${col.color}" th:href="@{/upd(revColor=${col.color})}"></a>
         </td>
-        <td th:text="">
-
+        <td class="votesCell" th:text="1">
         </td>
     </tr>
     <tr>
-        <td th:text="Total" th:onclick="'javascript:totalClicked();'">Total</td>
+        <td>
+            <a onclick="totalClicked();"><u>TOTAL</u></a>
+        </td>
+        <td id="total-cell">0</td>
         <!--<td><a th:href="">Total</a></td>-->
         <!--<a href="product/list.html" th:href="@{/product/list}">Product List</a>-->
     </tr>
@@ -32,10 +32,18 @@
 
 <script>
     function totalClicked() {
+        var sum=0;
+        var votesArray = document.getElementsByClassName("votesCell");
 
+    for (i = 0; i < votesArray.length; i++) {
+        var cellNumber=parseInt(votesArray[i].innerHTML);
+        if(!isNaN(cellNumber)){
+            sum = sum + cellNumber;
+        }
     }
 
-
+    document.getElementById("total-cell").innerHTML=sum;
+    }
 </script>
 
 </body>
