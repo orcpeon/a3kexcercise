@@ -1,4 +1,4 @@
-package colortables;
+package colortables.controllers;
 
 import colortables.database.Votes;
 import colortables.database.VotesRepository;
@@ -20,14 +20,12 @@ public class VotesUpdaterController {
     @GetMapping("/upd")
     @ResponseBody
     private String updVotes(@RequestParam(name = "color") String color, Model model) {
-        System.out.println("!!!!!!fjsfkdgjgdsf   " + getVotes(color));
         return getVotes(color);
     }
 
     private String getVotes(String color) {
         int i = 0;
         List<Votes> suitableEntries = votesRepository.findByColorIgnoreCase(color);
-        //suitableEntries.forEach(() -> );
         for (Votes v : suitableEntries) {
             i += v.getVotes();
         }
