@@ -15,16 +15,17 @@
     </tr>
     <tr th:each="col : ${colors}">
         <td>
-            <a href="a3k.html" th:text="${col.color}" th:href="@{/upd(revColor=${col.color})}"></a>
+            <!--<a href="javascript: updateVotes();" th:text="${col.color}"></a>-->
+            <a href="#/" th:text="${col.color}" class="js-updateVotes"></a>
         </td>
-        <td class="votesCell" th:text="1">
+        <td class="votesCell">
         </td>
     </tr>
     <tr>
         <td>
             <a onclick="totalClicked();"><u>TOTAL</u></a>
         </td>
-        <td id="total-cell">0</td>
+        <td id="total-cell"></td>
     </tr>
 </table>
 </body>
