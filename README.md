@@ -11,5 +11,6 @@ CREATE DATABASE colorsdb;
 CREATE USER 'a3kcolors'@'localhost' IDENTIFIED BY 'a3kcolors';
 GRANT ALL PRIVILEGES ON colors.* TO 'a3kcolors'@'localhost';
 ```
+Clone the project and you're good to go.
 Tables would be created automatically when you run the code.
 Page deploys on localhost:8080
