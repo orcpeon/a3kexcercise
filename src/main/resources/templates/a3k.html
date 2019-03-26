@@ -15,7 +15,6 @@
     </tr>
     <tr th:each="col : ${colors}">
         <td>
-            <!--<a href="javascript: updateVotes();" th:text="${col.color}"></a>-->
             <a href="#/" th:text="${col.color}" class="js-updateVotes"></a>
         </td>
         <td class="votesCell">
